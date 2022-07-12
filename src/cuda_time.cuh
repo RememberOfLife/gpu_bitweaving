@@ -53,4 +53,6 @@
         CUDA_TRY(cudaEventRecord(stop));                                                                                                             \
         CUDA_TRY(cudaEventSynchronize(stop));                                                                                                        \
         CUDA_TRY(cudaEventElapsedTime(time, start, stop));                                                                                           \
+        CUDA_TRY(cudaEventDestroy(start));                                                                                                           \
+        CUDA_TRY(cudaEventDestroy(stop));                                                                                                            \
     } while (0)
